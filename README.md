@@ -3,12 +3,21 @@ clean-dev-tools
 
 A collection of scripts for programming Clean on Linux or similar.
 
+How to use
+----------
+
+    $ cd /path/to/your/clean/project
+    $ /path/to/clean-dev-tools/clean-ide
+    # a new terminal opens
+    $ gvim main.icl
+    # hack hack hack
+    $ clean main.prj
 
 clean-ide
 ---------
 
 Starts a terminal with various environment variables set.
-In this terminal you can use all the commands described below.
+In this terminal you can use the commands described below.
 From this terminal you should start your editor.
 
 Configuration happens inside the script clean-ide. Modify it to your taste.
@@ -39,12 +48,16 @@ clean
 
 A wrapper around cpm, the clean project manager.
 Mangles error messages and filters the overly verbose output of the compiler.
-Exits with 0 on success and 1 on error, to behave like a real proper program.
+Exits with 0 on success and 1 on error, like a normal program.
 Enables idioms like
 
     clean test.prj && ./test
 
-Tees error messages to errors.err, so if you have the correct error format set
+To see how error messages are filtered, see filter_clean_crap.grep
+The exit code is based on whether after this filter there are any messages.
+If there is some compiler output that I forgot to filter, amend this file appropriately.
+
+clean tees error messages to errors.err, so if you have the correct error format set
 (see [vim-clean][norm2782-vim-clean] and its various forks) you can :cfile in
 vim to source the compile errors.
 
