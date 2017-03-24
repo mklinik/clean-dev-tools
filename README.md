@@ -30,7 +30,7 @@ Clean grep. A wrapper around recursive grep that only searches clean source
 files, and ignores Clean System Files and various source control directories.
 
     $ cgr addNotification
-    ./main.icl:32:  , publish "/headquarters" (\_ -> forever (makeNotification >>= showNotification >>= addNotification))
+    ./main.icl:32:  , publish "/headquarters" (\_ -> forever (makeNotification >>= addNotification))
     ./tasks.dcl:72:addNotification :: Notification -> Task()
     ./tasks.icl:28:addNotification :: Notification -> Task()
     ./tasks.icl:29:addNotification a = upd ( \ ns -> ns ++ [a]) notifications @!()
@@ -40,7 +40,8 @@ To be used standalone or from within vim.
     " Put this somewhere in your vim config
     " Press <Enter> to grep for the word under the cursor
     set grepprg=cgr
-    nmap <buffer> <cr> :match green /\<<C-R>=expand("<cword>")<CR>\>/<CR>:silent grep \\\<<C-R>=expand("<cword>")<CR>\\\><CR>:redraw!<CR>
+    nmap <buffer> <cr> :match green /\<<C-R>=expand("<cword>")<CR>\>/<CR>
+      \ :silent grep \\\<<C-R>=expand("<cword>")<CR>\\\><CR>:redraw!<CR>
 
 
 clean
