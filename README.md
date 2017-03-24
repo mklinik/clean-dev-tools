@@ -67,5 +67,6 @@ vim to source the compile errors.
     Type error [main.icl,383,foo]:"argument 1 of + : True" cannot unify demanded type with offered type:
      Int
      Bool
+    # in vim, do a :cfile to load the error messages
 
 [norm2782-vim-clean]: https://github.com/norm2782/vim-clean
