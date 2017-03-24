@@ -3,12 +3,16 @@ clean-dev-tools
 
 A collection of scripts for programming Clean on Linux or similar.
 
+
 clean-ide
 ---------
 
 Starts a terminal with various environment variables set.
 In this terminal you can use all the commands described below.
-You want to modify it to your taste.
+From this terminal you should start your editor.
+
+Configuration happens inside the script clean-ide. Modify it to your taste.
+
 
 cgr
 ---
@@ -28,6 +32,7 @@ To be used standalone or from within vim.
     " Press <Enter> to grep for the word under the cursor
     set grepprg=cgr
     nmap <buffer> <cr> :match green /\<<C-R>=expand("<cword>")<CR>\>/<CR>:silent grep \\\<<C-R>=expand("<cword>")<CR>\\\><CR>:redraw!<CR>
+
 
 clean
 -----
