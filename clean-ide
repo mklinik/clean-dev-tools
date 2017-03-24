@@ -1,29 +1,23 @@
 #!/bin/bash
 
-# For this script to work, put these lines in your .bashrc and then adapt the
-# variables in the Configuration section.
+# For this script to work, put these lines in your .bashrc
 
 #  if [[ $custom_source ]]
 #  then
 #    source "$custom_source"
 #  fi
 
-# ==== BEGIN Configuration
-
-# your favourite terminal emulator
-TERMINAL=urxvt
-
 # tell me where your clean installation is
 export CLEAN_BASEDIR=/home/mkl/clean/clean-nightly-2017-03-24
 
-# ==== END Configuration
-
-# import clean-dev-tools
 # Scripts in clean-dev-tools need CLEAN_DEV_TOOLS set
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 export CLEAN_DEV_TOOLS="$SCRIPTPATH"
 
-# custom_source must be enabled in .bashrc, see above
+# custom_source must be enabled in .bashrc, see above.
 # urxvt starts a bash, which uses custom_source
-custom_source=$CLEAN_DEV_TOOLS/clean-ide.source $TERMINAL &
+custom_source=$CLEAN_DEV_TOOLS/clean-ide.source urxvt &
+
+# use bash directly if you don't want to start a new terminal
+#custom_source=$CLEAN_DEV_TOOLS/clean-ide.source bash
