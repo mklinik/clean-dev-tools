@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function postprocessFilenames() {
+  # The generated filenames in tags files have dots instead of slashes for hierarchical modules.
+  # We need to replace all dots with slashes, except the one before icl or dcl
+  #   /home/mkl/clean/clean-svn-2016-08-26/lib/iTasks-SDK/Server/iTasks.API.Core.Types.icl
+  # becomes
+  #   /home/mkl/clean/clean-svn-2016-08-26/lib/iTasks-SDK/Server/iTasks/API/Core/Types.icl
+
+  # first, replace all dots with slashes
+  sed 's#\.#\/#g' |\
+  # restore the last dot for .icl and .dcl
+  sed 's#\/\([id]cl\t\)#.\1#'
+}
+
+cpm $1 |\
+  grep -f $CLEAN_DEV_TOOLS/filter_clean_crap.grep -v |\
+  # mangling clean error message is not needed if you have the right vim errorformat set.
+  #sed -f $CLEAN_DEV_TOOLS/format_clean_errors.sed |\
+  tee errors.err
+
+if [ -s errors.err ]
+then
+  exit 1
+else
+  # check if there are any ctags files
+  (ls 'Clean System Files'/ctags/*_tags) 1>/dev/null 2>&1
+  if [ $? -eq 0 ]
+  then
+      # combine and sort all tags files
+      # sort needs LC_ALL=C to sort punctuation correctly
+      export LC_ALL=C
+      cat 'Clean System Files'/ctags/*_tags | sort | postprocessFilenames > tags
+  fi
+  exit 0
+fi

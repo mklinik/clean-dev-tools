@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z ${CLEAN_HOME+x} ]
+then
+  export CLEAN_HOME=$CLEAN_BASEDIR
+  export PATH=$CLEAN_BASEDIR/bin:$CLEAN_BASEDIR/lib/exe:$PATH
+  echo using clean $CLEAN_HOME
+  export PS1="[clean] "$PS1
+else
+  echo already using clean $CLEAN_HOME
+fi
+
+echo using clean-dev-tools $CLEAN_DEV_TOOLS
+
+# put clean-dev-tools in PATH
+export PATH=$CLEAN_DEV_TOOLS:$PATH

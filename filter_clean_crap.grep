@@ -1,0 +1,25 @@
+^Bringing up to date\.\.\.
+^Compiling '
+^Analyzing '
+^Generating code for '
+^Bring up to date\.\.\.
+^Compiling\.\.\.
+^Finished making\.
+^Generating\.\.\.
+^Linking\.\.\.
+^Linking '
+^iTasks Resource Collector:
+^Possibly missed fusion oppurtunity:
+]: module has changed
+]: not all derived strictness information is exported
+]: is older than .abc file
+]: no abc file
+' was linked with different application options
+]: no inline code for this function
+.o,]: does not exist
+]: does not exist. Linking new executable.
+has changed$
+^Warning: Unable to setup directory cache: '
+,]: can`t find
+]: is older than object files. Linking new executable.
+]: .abc out of date, different compiler options. (Reuse Unique Nodes)

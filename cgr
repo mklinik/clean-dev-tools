@@ -1,0 +1,11 @@
+#!/bin/bash
+
+grep -nIr \
+    --exclude-dir=.git \
+    --exclude-dir=.svn \
+    --exclude-dir=CVS \
+    --exclude-dir="Clean System Files" \
+    --include=*.icl\
+    --include=*.dcl\
+    --color=auto\
+    "$@" .
