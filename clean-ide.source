@@ -7,5 +7,8 @@ echo using clean $CLEAN_HOME
 export PATH=$CLEAN_DEV_TOOLS:$PATH
 echo using clean-dev-tools $CLEAN_DEV_TOOLS
 
-# put clean-dev-tools in PATH
-export PATH=$CLEAN_DEV_TOOLS:$PATH
+export PS1="[clean] "$PS1
+
+# for Tim's cl https://github.com/timjs/cl
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
