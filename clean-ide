@@ -8,7 +8,9 @@
 #  fi
 
 # tell me where your clean installation is
-export CLEAN_BASEDIR=/home/mkl/clean/clean-nightly-2017-03-24
+#export CLEAN_BASEDIR=/home/mkl/clean/clean-nightly-2017-03-24
+# use a symlink to link to the current version
+export CLEAN_BASEDIR=/home/mkl/clean/clean
 
 # Scripts in clean-dev-tools need CLEAN_DEV_TOOLS set
 SCRIPT=$(readlink -f "$0")
