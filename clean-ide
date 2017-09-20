@@ -19,7 +19,7 @@ export CLEAN_DEV_TOOLS="$SCRIPTPATH"
 
 # custom_source must be enabled in .bashrc, see above.
 # urxvt starts a bash, which uses custom_source
-custom_source=$CLEAN_DEV_TOOLS/clean-ide.source urxvt &
+#custom_source=$CLEAN_DEV_TOOLS/clean-ide.source urxvt &
 
 # use bash directly if you don't want to start a new terminal
-#custom_source=$CLEAN_DEV_TOOLS/clean-ide.source bash
+custom_source=$CLEAN_DEV_TOOLS/clean-ide.source bash
