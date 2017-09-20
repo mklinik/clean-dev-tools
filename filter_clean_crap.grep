@@ -25,3 +25,5 @@ has changed$
 ]: .abc out of date, different compiler options.
 ^First found at:
 ^Also found at:
+^Warning: Multiple file instances: 'errors.err'.
+^Warning: Multiple file instances: 'README.md'.
