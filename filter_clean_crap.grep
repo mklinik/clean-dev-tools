@@ -22,4 +22,6 @@ has changed$
 ^Warning: Unable to setup directory cache: '
 ,]: can`t find
 ]: is older than object files. Linking new executable.
-]: .abc out of date, different compiler options. (Reuse Unique Nodes)
+]: .abc out of date, different compiler options.
+^First found at:
+^Also found at:
