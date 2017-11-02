@@ -27,6 +27,8 @@ else
   # generate tags
   if [ -f makeTags.sh ]
   then
+      # my makeTags.sh is just:
+      #  cloogletags -c -l -d .
       . makeTags.sh
   fi
   exit 0
