@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# The output of the clean compiler is not very suited for post-processing.
+# Different kinds of error messages have different formats, file names are not
+# absolute, a lot of progress output is generated that has nothing to do with
+# errors, and so on.
+#
+# This script is a wrapper that filters and mangles output to make it more
+# suitable for post-processing.
+
 function postprocessFilenames() {
   # The generated filenames in tags files have dots instead of slashes for hierarchical modules.
   # We need to replace all dots with slashes, except the one before icl or dcl
