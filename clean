@@ -15,8 +15,9 @@ function postprocessFilenames() {
 
 unbuffer cpm $1 |\
   grep -f $CLEAN_DEV_TOOLS/filter_clean_crap.grep -v |\
-  # postprocessFilenames is needed if there are compile errors in hierarchical modules like Control.Monad.icl
-  # but right now it is more confusing than it helps. need to be smarter
+  # postprocessFilenames is needed if there are compile errors in hierarchical
+  # modules like Control.Monad.icl but right now it is more confusing than it
+  # helps. Need to be smarter.
   #postprocessFilenames |\
   tee errors.err
 
