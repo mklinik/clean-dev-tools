@@ -26,14 +26,10 @@ if [ -s errors.err ]
 then
   exit 1
 else
-  # check if there are any ctags files
-  (ls 'Clean System Files'/ctags/*_tags) 1>/dev/null 2>&1
-  if [ $? -eq 0 ]
+  # generate tags
+  if [ -f makeTags.sh ]
   then
-      # combine and sort all tags files
-      # sort needs LC_ALL=C to sort punctuation correctly
-      export LC_ALL=C
-      cat 'Clean System Files'/ctags/*_tags | sort | postprocessFilenames > tags
+      . makeTags.sh
   fi
   exit 0
 fi
