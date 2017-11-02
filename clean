@@ -18,8 +18,6 @@ unbuffer cpm $1 |\
   # postprocessFilenames is needed if there are compile errors in hierarchical modules like Control.Monad.icl
   # but right now it is more confusing than it helps. need to be smarter
   #postprocessFilenames |\
-  # mangling clean error message is not needed if you have the right vim errorformat set.
-  #sed -f $CLEAN_DEV_TOOLS/format_clean_errors.sed |\
   tee errors.err
 
 if [ -s errors.err ]
