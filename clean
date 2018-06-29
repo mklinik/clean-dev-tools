@@ -38,7 +38,7 @@ else
   then
       # my makeTags.sh is just:
       #  cloogletags -c -l -d .
-      . makeTags.sh
+      . makeTags.sh >/dev/null 2>&1
   fi
   exit 0
 fi
